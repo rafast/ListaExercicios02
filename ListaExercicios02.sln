@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListaExercicios02", "ListaExercicios02\ListaExercicios02.csproj", "{8D2561CD-592B-4330-A407-1D75B8E8F2D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questao02", "Questao02\Questao02.csproj", "{45FD86A4-E8F9-4AAB-A99F-F39430391706}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D2561CD-592B-4330-A407-1D75B8E8F2D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2561CD-592B-4330-A407-1D75B8E8F2D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2561CD-592B-4330-A407-1D75B8E8F2D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2561CD-592B-4330-A407-1D75B8E8F2D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45FD86A4-E8F9-4AAB-A99F-F39430391706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45FD86A4-E8F9-4AAB-A99F-F39430391706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45FD86A4-E8F9-4AAB-A99F-F39430391706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45FD86A4-E8F9-4AAB-A99F-F39430391706}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {490369BB-7D54-48EB-A784-0410959B8AC0}
+	EndGlobalSection
+EndGlobal
