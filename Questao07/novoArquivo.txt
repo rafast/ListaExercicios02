@@ -1,0 +1,6 @@
+url=http://empresa.com.br/app
+porta=8081
+endereco=192.161.35.101
+email=admin@gmai.com
+senha=abc123
+usuario=joao paulo
