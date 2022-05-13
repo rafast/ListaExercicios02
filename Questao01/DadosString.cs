@@ -21,8 +21,28 @@ namespace ListaExercicio02.Questao01
         {
         }
 
+        public void LeituraDosDados()
+        {
+            Console.WriteLine("Favor preencher os dados para cadastro: ");
+            Console.Write("Nome: ");
+            Nome = Console.ReadLine();
+            Console.Write("CPF: ");
+            Cpf = Console.ReadLine();
+            Console.Write("Data de nascimento: ");
+            DataNascimento = Console.ReadLine();
+            Console.Write("Renda mensal: R$");
+            RendaMensal = Console.ReadLine();
+            Console.Write("Estado Civil: ");
+            EstadoCivil = Console.ReadLine();
+            Console.Write("Numero de dependentes: ");
+            Dependentes = Console.ReadLine();
+            Console.WriteLine();
+
+        }
+
         public void Validacao()
         {
+            validacaoCampos = new Dictionary<string, string>();
             validacaoCampos.Add("Nome", validaNome(Nome));
             validacaoCampos.Add("Cpf", validaCPF(Cpf));
             DateTime dt;
@@ -33,17 +53,50 @@ namespace ListaExercicio02.Questao01
             validacaoCampos.Add("Dependentes", validaDependentes(Dependentes));
         }
 
-        public void Imprime()
+        public void ImprimeListaDeErros()
         {
-            var possuiErro = validacaoCampos.Where(campo => campo.Value != "Valido").Any();
-
-            if (possuiErro)
+            Console.WriteLine("O(s) campo(s) abaixo está(ão) inválido(s).");
+            if (!TodosValidos())
             {
                 foreach (var campo in validacaoCampos.Where(campo => campo.Value != "Valido"))
                 {
                     Console.WriteLine($"{campo.Key} - {campo.Value}");                                
                 }
+                Console.WriteLine();
             }            
+        }
+
+        public void LeituraDadosInvalidos()
+        {
+            Console.WriteLine("Favor informa os dados inválidos novamente.");
+            string novaEntrada = "";
+            foreach (var campo in validacaoCampos.Where(campo => campo.Value != "Valido"))
+            {
+                Console.Write($"{campo.Key}: ");
+                novaEntrada = Console.ReadLine();
+                GetType().GetProperty(campo.Key).SetValue(this, novaEntrada);
+            }
+        }
+
+        public void PreencheDadosCliente(Cliente cliente)
+        {
+            cliente.Nome = Nome;
+            cliente.Cpf = long.Parse(Cpf);
+            var dataNascimento = new DateTime();
+            validaData(out dataNascimento, DataNascimento);
+            cliente.dt_nascimento = dataNascimento;
+            float renda = 0;
+            validaRenda(out renda, RendaMensal);
+            cliente.RendaMensal = renda;
+            cliente.EstadoCivil = EstadoCivil.ToUpper().ToCharArray()[0];
+            cliente.Dependentes = int.Parse(Dependentes);
+
+        }
+
+        public bool TodosValidos()
+        {
+            var possuiInvalido = validacaoCampos.Where(campo => campo.Value != "Valido").Any();
+            return !possuiInvalido;
         }
 
         private string validaNome(string nome)

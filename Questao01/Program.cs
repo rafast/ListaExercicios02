@@ -6,29 +6,19 @@ namespace ListaExercicio02.Questao01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Testando a Questao01!");
             Cliente cliente = new Cliente();
             DadosString dados = new DadosString();
-            LeituraDosDados(dados);
+            dados.LeituraDosDados();
             dados.Validacao();
-            dados.Imprime();
-
-        }
-
-        static void LeituraDosDados(DadosString dados)
-        {
-            Console.Write("Nome: ");
-            dados.Nome = Console.ReadLine();
-            Console.Write("CPF: ");
-            dados.Cpf = Console.ReadLine();
-            Console.Write("Data de nascimento: ");
-            dados.DataNascimento = Console.ReadLine();
-            Console.Write("Renda mensal: R$");
-            dados.RendaMensal = Console.ReadLine();
-            Console.Write("Estado Civil: ");
-            dados.EstadoCivil = Console.ReadLine();
-            Console.Write("Numero de dependentes: ");
-            dados.Dependentes = Console.ReadLine();
+            while (!dados.TodosValidos())
+            {
+                dados.ImprimeListaDeErros();
+                dados.LeituraDadosInvalidos();
+                dados.Validacao();
+            }
+            dados.PreencheDadosCliente(cliente);
+            cliente.ImprimeDados();
 
         }
     }
