@@ -8,19 +8,9 @@ namespace ListaExercicio02.Questao04
 
         public CertidaoNascimento(DateTime dtEmissao, Pessoa pessoa)
         {
-            if (pessoa.certidaoNascimento != null)
-            {
-
-                throw new ArgumentException("Essa pessoa já possui uma certidão de nascimento.");
-            }
-                dataEmissao = dtEmissao;
-                Pessoa = pessoa;
-                pessoa.certidaoNascimento = this;
-        }
-
-        public static implicit operator CertidaoNascimento(DateTime v)
-        {
-            throw new NotImplementedException();
+            dataEmissao = dtEmissao;
+            Pessoa = pessoa;
+            pessoa.VincularCertidao(this);
         }
     }
 }

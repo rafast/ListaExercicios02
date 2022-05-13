@@ -17,8 +17,9 @@ namespace ListaExercicio02.Questao04
             Console.WriteLine(andre.certidaoNascimento.dataEmissao);
             Pessoa joana = new("Joana de Angelis");
             CertidaoNascimento certidaoJoana = new(DateTime.Today, joana);
-            
-            //pessoa.certidaoNascimento = certidaoJoana;
+
+            //Caso tente alterar a certidao, gera uma excecao.
+            //andre.VincularCertidao(certidaoJoana);
 
 
         }

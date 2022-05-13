@@ -16,7 +16,6 @@ namespace ListaExercicio02.Questao04
             {
                 if (certidaoNascimento1 != null)
                 {
-
                     throw new InvalidOperationException("A Certidão de Nascimento não pode ser alterada.");
                 }               
                 certidaoNascimento1 = value;
@@ -27,6 +26,12 @@ namespace ListaExercicio02.Questao04
         public Pessoa(string inputNome)
         {
             nome = inputNome;
+            certidaoNascimento = null;
+        }
+
+        public void VincularCertidao(CertidaoNascimento certidao)
+        {
+            certidaoNascimento = certidao;
         }
     }
 }
