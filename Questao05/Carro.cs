@@ -18,14 +18,9 @@ namespace ListaExercicio02.Questao05
                 if (value == null)
                 {
                     throw new ArgumentException("Motor nulo, um carro não pode ficar sem motor.");
-                }
-
-                if (value.carro != null)
-                {
-                    throw new ArgumentException("Este motor já está em uso. Um motor não pode ser usado por mais de um carro");
-                }
+                }                
                 motor1 = value;
-                value.carro = this;
+                value.Instalar(this);
             }
             }
 
@@ -69,9 +64,8 @@ namespace ListaExercicio02.Questao05
             {
                 throw new ArgumentException("Motor nulo, um carro não pode ficar sem motor.");
             }
-            motor.carro = null;
-            motor = novoMotor;
-            novoMotor.carro = this;
+            motor.Desinstalar();
+            motor = novoMotor;            
         }
     }
 }

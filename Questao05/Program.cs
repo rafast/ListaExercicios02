@@ -9,31 +9,40 @@ namespace ListaExercicio02.Questao05
             Console.WriteLine("Testando a Questao 05");
             Motor motor = new Motor(2.3M);
             Console.WriteLine("Imprimindo as propriedades do motor criado:");
-            //Console.WriteLine(motor.Cilindrada);
-            //Console.WriteLine(motor.carro.Equals(null));
-            Carro meuCarro = new("IAB-8392", "Frontier", motor);
+            Console.WriteLine($"Cilindrada: {motor.Cilindrada}");
+            Console.WriteLine($"A referencia do carro é nula? { motor.carro == null}");
+            Console.WriteLine("----------------------------------------------");
+
+            Carro frontier = new("IAB-8392", "Frontier", motor);
             Console.WriteLine("Imprimindo as propriedades do motor após utilização no carro:");
-            Console.WriteLine(motor.Cilindrada);
-            Console.WriteLine(motor.carro.Placa);
-            Console.WriteLine(motor.carro.Modelo);
+            Console.WriteLine($"Cilindrada: {motor.Cilindrada}");
+            Console.WriteLine($"Motor referente ao carro de placa: {motor.carro.Placa}");
+            Console.WriteLine($"Motor referente ao carro modelo: {motor.carro.Modelo}");
+            Console.WriteLine("----------------------------------------------");
+
+
             Console.WriteLine("Imprimindo as propriedades do carro criado:");
-            Console.WriteLine(meuCarro.Modelo);
-            Console.WriteLine(meuCarro.Placa);
-            Console.WriteLine(meuCarro.motor.Cilindrada);
+            Console.WriteLine($"Modelo: {frontier.Modelo}");
+            Console.WriteLine($"Placa: {frontier.Placa}");
+            Console.WriteLine($"Cilindrada: {frontier.motor.Cilindrada}");
+            Console.WriteLine("----------------------------------------------");
+
             Motor motorPotente = new Motor(3.0M);
-            meuCarro.TrocarMotor(motorPotente);
-            Console.WriteLine("Imprimindo as propriedades do carro com o novo motor:");
-            Console.WriteLine(meuCarro.Modelo);
-            Console.WriteLine(meuCarro.Placa);
-            Console.WriteLine(meuCarro.motor.Cilindrada);
-            Console.WriteLine("Imprimindo as propriedades do novo motor:");
-            Console.WriteLine(motorPotente.Cilindrada);
-            Console.WriteLine(motorPotente.carro.Placa);
-            Console.WriteLine(motorPotente.carro.Modelo);
+            Console.WriteLine("Imprimindo as propriedades do novo motor criado:");
+            Console.WriteLine($"Cilindrada: {motorPotente.Cilindrada}");
+            Console.WriteLine($"A referencia do carro é nula? { motorPotente.carro == null}");
+            Console.WriteLine("----------------------------------------------");
+
+            Console.WriteLine("Substituindo o motor do carro pelo novo motor mais potente.");
+            frontier.TrocarMotor(motorPotente);
+            Console.WriteLine($"Modelo: {frontier.Modelo}");
+            Console.WriteLine($"Placa: {frontier.Placa}");
+            Console.WriteLine($"Cilindrada: {frontier.motor.Cilindrada}");
+            Console.WriteLine("----------------------------------------------");
+
             Console.WriteLine("Imprimindo as propriedades do motor antigo:");
-            Console.WriteLine(motor.Cilindrada);
-            Console.WriteLine(motor.carro.Placa);
-            Console.WriteLine(motor.carro.Modelo);
+            Console.WriteLine($"Cilindrada: {motor.Cilindrada}");
+            Console.WriteLine($"A referencia do carro é nula? { motor.carro == null}");
         }
     }
 }

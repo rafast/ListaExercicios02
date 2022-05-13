@@ -14,19 +14,26 @@ namespace ListaExercicio02.Questao05
             }
             set
             {
-                if (carro1 == null)
+                if (carro1 != null)
                 {
-                    carro1 = value;
+                    throw new ArgumentException("Este motor já está em uso. Um motor não pode ser usado por mais de um carro");
                 }
+                    carro1 = value;
             }
          }
 
         public Motor(decimal cilindrada)
         {
             Cilindrada = cilindrada;
+            carro1 = null;
+        }       
+
+        public void Instalar(Carro car)
+        {
+            carro1 = car;
         }
 
-        public void RemoverCarro()
+        public void Desinstalar()
         {
             carro1 = null;
         }
