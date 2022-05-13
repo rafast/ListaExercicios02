@@ -7,7 +7,7 @@ namespace ListaExercicio02.Questao05
         static void Main(string[] args)
         {
             Console.WriteLine("Testando a Questao 05");
-            Motor motor = new Motor(2.3M);
+            Motor motor = new Motor(1.0M);
             Console.WriteLine("Imprimindo as propriedades do motor criado:");
             Console.WriteLine($"Cilindrada: {motor.Cilindrada}");
             Console.WriteLine($"A referencia do carro é nula? { motor.carro == null}");
@@ -25,9 +25,10 @@ namespace ListaExercicio02.Questao05
             Console.WriteLine($"Modelo: {frontier.Modelo}");
             Console.WriteLine($"Placa: {frontier.Placa}");
             Console.WriteLine($"Cilindrada: {frontier.motor.Cilindrada}");
+            Console.WriteLine($"Velocidade máxima: {frontier.VelocidadeMaxima()} km/h");
             Console.WriteLine("----------------------------------------------");
 
-            Motor motorPotente = new Motor(3.0M);
+            Motor motorPotente = new Motor(2.3M);
             Console.WriteLine("Imprimindo as propriedades do novo motor criado:");
             Console.WriteLine($"Cilindrada: {motorPotente.Cilindrada}");
             Console.WriteLine($"A referencia do carro é nula? { motorPotente.carro == null}");
@@ -38,6 +39,7 @@ namespace ListaExercicio02.Questao05
             Console.WriteLine($"Modelo: {frontier.Modelo}");
             Console.WriteLine($"Placa: {frontier.Placa}");
             Console.WriteLine($"Cilindrada: {frontier.motor.Cilindrada}");
+            Console.WriteLine($"Velocidade máxima: {frontier.VelocidadeMaxima()} km/h");
             Console.WriteLine("----------------------------------------------");
 
             Console.WriteLine("Imprimindo as propriedades do motor antigo:");
